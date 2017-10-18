@@ -36,7 +36,7 @@ public class ManipulateDna {
     System.out.println("Enter a string only containing C, G, T and A: " + dnaString);
     String complementDna = dnaString.toUpperCase();
     // Step Two: Compute the complement of the DNA String
-    complementDna = dnaString.replace('a', 'T');
+    complementDna = complementDna.replace('a', 'T');
     complementDna = complementDna.replace('t', 'A');
     complementDna = complementDna.replace('c', 'G');
     complementDna = complementDna.replace('g', 'C');
@@ -46,20 +46,22 @@ public class ManipulateDna {
     Random random = new Random();
     char letter = dna.charAt(random.nextInt(4));
     int randomInsertionIndex = random.nextInt(dnaString.length());
-    String dnaMutationOne = dnaString.substring(0, randomInsertionIndex) 
+    String dnaOne = dnaString.substring(0, randomInsertionIndex) 
         + letter + dnaString.substring(randomInsertionIndex);
     System.out.println("Inserting " + letter + " at position " + randomInsertionIndex 
-        + " gives " + dnaMutationOne);
+        + " gives " + dnaOne);
     // Step Four: Delete a DNA letter from a randomly chosen position in the DNA string
-    String first = dnaString.substring(0, randomInsertionIndex);
-    String second = dnaString.substring(randomInsertionIndex + 1, dnaString.length());
-    System.out.println("Deleting from position " + randomInsertionIndex + " gives " + first 
-        + second);
+    int randomRemovalIndex = random.nextInt(dnaString.length());
+    String dnaTwo = dnaString.substring(0, randomRemovalIndex);
+    String dnaThree = dnaString.substring(randomRemovalIndex + 1, dnaString.length());
+    System.out.println("Deleting from position " + randomRemovalIndex + " gives " + dnaTwo 
+        + dnaThree);
     // Step Five: Change a random position in the DNA String to a randomly chosen DNA letter
-    String three = dnaString.substring(0, randomInsertionIndex);
-    String four = dnaString.substring(randomInsertionIndex + 1, dnaString.length());
-    System.out.println("Changing position " + (randomInsertionIndex + 1) + " gives " + first
-        + letter + second);
+    int randomInsertionIndex2 = random.nextInt(dnaString.length());
+    String dnaFour = dnaString.substring(0, randomInsertionIndex2);
+    String dnaFive = dnaString.substring(randomInsertionIndex2 + 1, dnaString.length());
+    System.out.println("Changing position " + (randomInsertionIndex2 + 1) + " gives " + dnaFour
+        + letter + dnaFive);
     // Step Six: Display a final thankyou message
     System.out.println();
     System.out.println("Thank you for using the ManipulateDNA program.");

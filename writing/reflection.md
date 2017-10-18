@@ -4,6 +4,7 @@ This lab required me to write a file called `ManipulateDNA`. Lab six was the
 most difficult lab thus far. The section that was most difficult to work
 through was step three. We were required to insert a randomly chosen DNA letter
 into the DNA String. Eventually, I used variables int and char to help proceed.
+
 I defined the int "randomInsertionIndex" as the variable that would represent
 where the randomly chosen DNA letter would fit into the string. Additionally I
 learned that it was necessary to use a "new Random" method to ensure that the
